@@ -9,17 +9,19 @@ def check_password(password: str) -> bool:
     number = False
     lenght = False
 
+    password = password.strip()
+
+    if(len(password) >= 8):
+        lenght = True
+
     for c in password:
         if(c.isdigit()):
             number = True
         elif(c.islower()):
             small_letter = True
         elif(c.isupper()):
-            capital_letter = True
-        elif(len(password) >= 8):
-            lenght = True
-    
-    return small_letter and capital_letter and number
+            capital_letter = True    
+    return small_letter and capital_letter and number and lenght
 
 
 dir = os.path.dirname(__file__)                     # Nacita cestu k suboru
