@@ -1,4 +1,5 @@
 # sem doplnte link na svoj kod
+# https://github.com/gomi8/sachovnicaprojekt.git
 
 import os;
 
@@ -6,6 +7,7 @@ def check_password(password: str) -> bool:
     small_letter = False
     capital_letter = False
     number = False
+    lenght = False
 
     for c in password:
         if(c.isdigit()):
@@ -14,6 +16,8 @@ def check_password(password: str) -> bool:
             small_letter = True
         elif(c.isupper()):
             capital_letter = True
+        elif(len(password) >= 8):
+            lenght = True
     
     return small_letter and capital_letter and number
 
